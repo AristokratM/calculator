@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color: red;
+}
+.btn-group {
+    margin: 5px;
+}
+#op_list1 {
+    background-color: aqua;
+}
+#op_list2 {
+    background-color: firebrick;
+}
+#op_list3 {
+    background-color: lightblue;
+}
