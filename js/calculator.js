@@ -29,30 +29,46 @@ class Calculator {
         self.last_op_index = -1
         self.can_zero = true
         self.float_number = false
+        self.first_zero = false
     }
 
     clear() {
         this.getInitSetting()
         this.debugDisplay()
     }
-
+    clearDefault() {
+        self.$out.innerText = ""
+        self.displayDefault = false
+    }
     number(id) {
         if (self.displayDefault) {
-            self.$out.innerText = ""
-            self.displayDefault = false
+            this.clearDefault()
         }
         self.last_number = true
+        if(self.first_zero) {
+            self.$out.innerText = self.$out.innerText.substr(0, self.$out.innerText.length - 1)
+        }
         this.addText(id)
         self.can_zero = true
+        self.first_zero = false
     }
     zero(id) {
-        if(!self.last_number || !self.can_zero || self.displayDefault) return
+        if(!self.can_zero || self.first_zero) return
+
+        if(!self.last_number || self.displayDefault) {
+            self.first_zero = true
+        }
+        if(self.displayDefault) {
+            this.clearDefault()
+
+        }
         this.addText(id)
     }
     make_float(id) {
         if(!self.last_number || self.float_number || self.displayDefault) return
         this.addText(id)
         self.float_number = true
+        self.first_zero = false
     }
     addText(id) {
         self.$out.innerText += document.getElementById(id).innerText
@@ -69,6 +85,10 @@ class Calculator {
             self.total_op_number -= 1
         } else this.addNumber()
         self.total_op_number += 1
+        if(self.$out.innerText[self.$out.innerText.length - 1] === '.') {
+            self.float_number = false
+            self.$out.innerText = self.$out.innerText.substr(0, self.$out.innerText.length - 1)
+        }
         const op = document.getElementById(id).innerText
         const item = new Operation({op: op, index: self.total_op_number})
         switch (Calculator.op_rank[op]) {
