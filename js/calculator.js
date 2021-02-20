@@ -65,7 +65,10 @@ class Calculator {
         this.addText(id)
     }
     make_float(id) {
-        if(!self.last_number || self.float_number || self.displayDefault) return
+        if(self.first_zero) {
+            self.last_number = true
+        } else
+        if(!self.last_number  || self.float_number || self.displayDefault) return
         this.addText(id)
         self.float_number = true
         self.first_zero = false
@@ -107,7 +110,7 @@ class Calculator {
         }
         self.last_number = false
         self.last_op_index = self.$out.innerText.length
-        self.can_zero = false
+        self.can_zero = true
         self.float_number = false
         this.addText(id)
         this.debugDisplay()
