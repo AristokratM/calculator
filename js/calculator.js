@@ -117,7 +117,6 @@ class Calculator {
     }
 
     addNumber() {
-        // console.log(self.last_op_index + 1 + " " + self.$out.innerText.length)
         self.numbers_list.push(parseFloat(self.$out.innerText.substr(self.last_op_index + 1, self.$out.innerText.length)))
         this.debugDisplay()
     }
@@ -127,11 +126,14 @@ class Calculator {
         document.getElementById("op_list3").innerText = self.op_list_3.toString()
         document.getElementById("numbers").innerText = self.numbers_list.toString()
     }
+    addToHistory(expression) {
+        document.getElementById("history").innerText += expression
+    }
     calculate() {
         if(self.last_op_index === self.$out.innerText.length -1 ){
             self.last_op_list.pop()
             self.total_op_number -= 1
-
+            self.$out.innerText = self.$out.innerText.substr(0, self.$out.innerText.length - 1)
         }
         else {
             this.addNumber()
@@ -176,6 +178,7 @@ class Calculator {
                     break
             }
         })
+        this.addToHistory(self.$out.innerText + " = " + self.numbers_list[0] + '\n')
         self.$out.innerText = self.numbers_list[0]
         const float = self.numbers_list[0] % 1 !== 0
         this.getDefaultSetting()
