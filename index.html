@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <title>Calculator</title>
 </head>
@@ -18,35 +16,26 @@
     <button type="button" class="btn btn-outline-primary" id="number9" onclick="calculator.number(`number9`)">9</button>
 </div>
 <button type="button" class="btn btn-outline-primary" id="add" onclick="calculator.operation(`add`)">+</button>
-<button type="button" class="btn btn-outline-primary" id="minus" onclick="calculator.operation(`minus`)">-</button>
-<br>
+<button type="button" class="btn btn-outline-primary" id="minus" onclick="calculator.operation(`minus`)">-</button> <br>
 <div class="btn-group" role="group" aria-label="Basic outlined example">
     <button type="button" class="btn btn-outline-primary" id="number4" onclick="calculator.number(`number4`)">4</button>
     <button type="button" class="btn btn-outline-primary" id="number5" onclick="calculator.number(`number5`)">5</button>
     <button type="button" class="btn btn-outline-primary" id="number6" onclick="calculator.number(`number6`)">6</button>
 </div>
 <button type="button" class="btn btn-outline-primary" id="mul" onclick="calculator.operation(`mul`)">*</button>
-<button type="button" class="btn btn-outline-primary" id="del" onclick="calculator.operation(`del`)">/</button>
-<br>
+<button type="button" class="btn btn-outline-primary" id="del" onclick="calculator.operation(`del`)">/</button> <br>
 <div class="btn-group" role="group" aria-label="Basic outlined example">
     <button type="button" class="btn btn-outline-primary" id="number1" onclick="calculator.number(`number1`)">1</button>
     <button type="button" class="btn btn-outline-primary" id="number2" onclick="calculator.number(`number2`)">2</button>
     <button type="button" class="btn btn-outline-primary" id="number3" onclick="calculator.number(`number3`)">3</button>
 </div>
 <button type="button" class="btn btn-outline-primary" id="power" onclick="calculator.operation(`power`)">^</button>
-<button type="button" class="btn btn-outline-primary" id="calc" onclick="calculator.calculate()">=</button>
-<br>
+<button type="button" class="btn btn-outline-primary" id="calc" onclick="calculator.calculate()">=</button> <br>
 <div class="btn-group" role="group" aria-label="Basic outlined example">
     <button type="button" class="btn btn-outline-primary" id="number0" onclick="calculator.zero(`number0`)">0</button>
     <button type="button" class="btn btn-outline-primary" id="point" onclick="calculator.make_float(`point`)">.</button>
     <button type="button" class="btn btn-outline-primary" id="clear" onclick="calculator.clear()">C</button>
 </div>
-
-
-
-<!--<button type="button" class="btn btn-outline-primary" id="backspace" onclick="calculator.backspace()"><-</button>-->
-
-
 <h3>History</h3>
 <p id="history"></p>
 <hr/>
@@ -55,9 +44,8 @@
 <p id="op_list1"></p>
 <p id="op_list2"></p>
 <p id="op_list3"></p>
-<!-- Optional JavaScript; choose one of the two! -->
 <script src="js/calculator.js"></script>
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>
